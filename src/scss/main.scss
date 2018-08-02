@@ -1,0 +1,134 @@
+@import 'abstracts/keyframes';
+@import 'abstracts/utils';
+
+@import 'base/base';
+
+@import 'components/nav';
+
+.container {
+    height: 100%;
+    width: 100%;
+
+    &__content {
+        display: block;
+        animation: fadeIn .2s linear;
+    }
+}
+
+.header {
+
+    background: rgba(24, 24, 34, 0.9);
+
+    &__text { 
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+.landing {
+    background: linear-gradient(to top, rgba(0,0,0, 0.6), rgba(0,0,0, 0.6)), url("../images/landing.jpeg");
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+
+    &__header {
+        color: #fff;
+        font-size: 4rem;
+    }
+
+    &__text {
+        margin: 30px 0px;
+        width: 50%;
+        color: #fff;
+        font-size: 1.2rem;
+    }
+}
+
+.team {
+    margin: 20px 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    &__element {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        width: 100%;
+
+        &-header {
+            font-size: 1.5rem;
+        }
+
+        &-text {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        &-image {
+            margin: 20px auto;
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+        }
+    }
+}
+
+.section {
+    margin: 30px 0px;
+
+    &__header {
+       font-size: 2.5rem; 
+    }
+
+    &__content{
+        width: 70%;
+        margin: 15px auto;
+    }
+
+    &__cta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 15px auto;
+    }
+}
+
+.progress-container {
+    width: 100%;
+    background: #ccc;
+    height: 8px;
+    position: fixed;
+    bottom: 0;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #4caf50;
+    width: 0%;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498DB;
+    border-bottom: 16px solid #3498DB;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    transition: opacity .3s ease, visibility .3s ease;
+}

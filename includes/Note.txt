@@ -1,0 +1,1 @@
+Can also use php file to get page title through switch statement of different urls
