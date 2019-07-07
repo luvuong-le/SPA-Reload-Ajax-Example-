@@ -50,15 +50,15 @@ gulp.task('sass', () => {
     .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('default', ['imagemin', 'minifyjs', 'sass']);
-gulp.task('dev:sass', ['sass']);
+gulp.task('default', gulp.series('imagemin', 'minifyjs', 'sass'));
+gulp.task('dev:sass', gulp.series('sass'));
 
 gulp.task('watch', () => {
-    gulp.watch('src/js/*.js', ['minifyjs']);
-    gulp.watch('src/images/*', ['imagemin']);
-    gulp.watch('src/scss/*.scss', ['sass']);
+    gulp.watch('src/js/*.js', gulp.series('minifyjs'));
+    gulp.watch('src/images/*', gulp.series('imagemin'));
+    gulp.watch('src/scss/*.scss', gulp.series('sass'));
 });
 
 gulp.task('watch:sass', () => {
-    gulp.watch('src/scss/*.scss', ['sass']);
+    gulp.watch('src/scss/*.scss', gulp.series('sass'));
 })
